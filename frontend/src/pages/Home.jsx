@@ -1,5 +1,5 @@
 import React from 'react'
-import LeftHome from '../components/leftHome'
+import LeftHome from '../components/LeftHome'
 import Feed from '../components/Feed'
 import RightHome from '../components/RightHome'
 
