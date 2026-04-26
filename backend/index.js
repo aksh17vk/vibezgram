@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cookieParser());
@@ -50,7 +50,7 @@ const startServer = async () => {
       console.log(`Server started on port ${port}`);
     });
   } catch (err) {
-    console.error("❌ Server startup aborted due to DB connection error.");
+    console.error("<<<<<< Server startup aborted due to DB connection error.>>>>>>");
     process.exit(1);
   }
 };

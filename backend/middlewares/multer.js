@@ -1,21 +1,33 @@
-import multer from "multer";
-import fs from "fs";
-import path from "path";
+// import multer from "multer";
+// import fs from "fs";
+// import path from "path";
 
-const uploadDir = "./public";
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-}
+// const uploadDir = "./public";
+// if (!fs.existsSync(uploadDir)) {
+//     fs.mkdirSync(uploadDir, { recursive: true });
+// }
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, uploadDir);
-    },
-    filename: (req, file, cb) => {
-        // Prefix with timestamp to avoid filename collisions
-        const uniqueName = `${Date.now()}-${file.originalname}`;
-        cb(null, uniqueName);
-    }
-});
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, uploadDir);
+//     },
+//     filename: (req, file, cb) => {
+//         // Prefix with timestamp to avoid filename collisions
+//         const uniqueName = `${Date.now()}-${file.originalname}`;
+//         cb(null, uniqueName);
+//     }
+// });
 
-export const upload = multer({ storage });
+// export const upload = multer({ storage });
+
+import multer from "multer"
+const storage=multer.diskStorage({
+ destination:(req,file,cb)=>{
+    cb(null,"./public")
+ },
+ filename:(req,file,cb)=>{
+    cb(null,file.originalname)
+ }
+})
+
+export const upload=multer({storage})
