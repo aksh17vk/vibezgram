@@ -3,6 +3,8 @@ import LeftHome from '../components/leftHome'
 import Feed from '../components/Feed'
 import RightHome from '../components/RightHome'
 
+import { serverUrl } from "../config";
+
 function Home() {
   return (
     <div className='w-full h-screen flex justify-center items-center'>

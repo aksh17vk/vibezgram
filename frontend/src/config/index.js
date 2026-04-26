@@ -1,1 +1,2 @@
-export const serverUrl = "http://localhost:8080"
+export const serverUrl = "http://localhost:5000"
+import.meta.env.VITE_API_URL
